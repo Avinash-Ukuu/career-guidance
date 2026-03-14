@@ -12,8 +12,14 @@
 
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <img height="30px" src="{{ asset('assets/adminlte/dist/img/avatar5.png') }}"
-                    class="img-circle elevation-2" alt="User Image">
+            
+                @if (!empty(auth()->user()->image) && file_exists('assets/uploads/users/' . auth()->user()->image))
+                    <img height="30px" src="{{ asset('assets/uploads/users/'.auth()->user()->image) }}" class="img-circle elevation-2"
+                    alt="User Image">
+                @else
+                    <img height="30px" src="{{ asset('assets/adminlte/dist/img/avatar5.png') }}" class="img-circle elevation-2"
+                    alt="User Image">
+                @endif
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <div class="dropdown-divider"></div>

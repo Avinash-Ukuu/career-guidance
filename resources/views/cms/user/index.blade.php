@@ -35,7 +35,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        @if($user->image)
+                                        @if(!empty($user->image) && file_exists('assets/uploads/users/' . $user->image))
                                             <img style="height: 100px;"
                                                 src="{{ asset('assets/uploads/users/' . $user->image) }}"
                                                 alt="{{ $user->name }}">
@@ -47,7 +47,6 @@
                                     </td>
                                     <td>{{ $user->name }}</td>
                                     <td>{!! $user->email !!}</td>
-
                                     <td>{{ $user->created_at }}</td>
 
                                 </tr>

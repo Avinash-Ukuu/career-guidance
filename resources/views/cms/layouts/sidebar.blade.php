@@ -11,7 +11,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                @if ($user->image)
+                @if (!empty(auth()->user()->image) && file_exists('assets/uploads/users/' . auth()->user()->image))
                     <img src="{{ asset('assets/uploads/users/'.auth()->user()->image) }}" class="img-circle elevation-2"
                     alt="User Image">
                 @else
