@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
@@ -104,5 +105,23 @@ class UserController extends Controller
         Session::flash("success","Data Saved");
 
         return redirect(route('cms.user.index'));
+    }
+
+    public function changePassword(Request $request)
+    {
+        return view("cms.user.changePasswordForm");
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
+        ]);
+        $hashValue      =   Hash::make($request->password);
+        auth()->user()->update(['password' => $hashValue]);
+        Session::flash('success', 'Password Changed Successfully');
+
+        return redirect(route('cms.dashboard'));
     }
 }

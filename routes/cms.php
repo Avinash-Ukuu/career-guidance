@@ -9,4 +9,7 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     Route::resource('user',         UserController::class);
     Route::get('profile',           [UserController::class,'profile'])->name('profile');
     Route::put('update-profile',    [UserController::class,'updateProfile'])->name('updateProfile');
+    Route::get("/change/password",  [UserController::class,'changePassword'])->name("changePassword");
+    Route::post("/update/password", [UserController::class,'updatePassword'])->name("updatePassword");
+
 });
