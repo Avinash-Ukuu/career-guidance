@@ -7,4 +7,6 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     Route::get('dashboard',         [DashboardController::class,'dashboard'])->name('dashboard');
     Route::resource('user',         UserController::class);
+    Route::get('profile',           [UserController::class,'profile'])->name('profile');
+    Route::put('update-profile',    [UserController::class,'updateProfile'])->name('updateProfile');
 });

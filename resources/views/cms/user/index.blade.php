@@ -16,7 +16,7 @@
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title">Department List</h3>
+                <h3 class="card-title">User List</h3>
             </div>
             <div class="table-responsive">
                 <div class="card-body">
@@ -34,9 +34,17 @@
                             @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td><img style="height: 100px;"
-                                            src="{{ asset('assets/uploads/users/' . $user->image) }}"
-                                            alt="{{ $user->name }}"></td>
+                                    <td>
+                                        @if($user->image)
+                                            <img style="height: 100px;"
+                                                src="{{ asset('assets/uploads/users/' . $user->image) }}"
+                                                alt="{{ $user->name }}">
+                                        @else
+                                            <img style="height: 100px;"
+                                                src="{{ asset('assets/frontend/images/default-user.png') }}"
+                                                alt="{{ $user->name }}">
+                                        @endif
+                                    </td>
                                     <td>{{ $user->name }}</td>
                                     <td>{!! $user->email !!}</td>
 

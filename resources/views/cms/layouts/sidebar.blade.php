@@ -11,8 +11,13 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('assets/adminlte/dist/img/avatar5.png') }}" class="img-circle elevation-2"
+                @if ($user->image)
+                    <img src="{{ asset('assets/uploads/users/'.auth()->user()->image) }}" class="img-circle elevation-2"
                     alt="User Image">
+                @else
+                    <img src="{{ asset('assets/adminlte/dist/img/avatar5.png') }}" class="img-circle elevation-2"
+                    alt="User Image">
+                @endif
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ ucfirst(auth()->user()->name) }}</a>

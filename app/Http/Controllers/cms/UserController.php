@@ -4,7 +4,11 @@ namespace App\Http\Controllers\cms;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -64,5 +68,41 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function profile()
+    {
+        $user   =   Auth::user();
+
+        return view('cms.user.profile', compact('user'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $user = Auth::user();
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        ]);
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        if ($request->has("image")) {
+            if (file_exists("assets/uploads/users/" . $user->image)) {
+                File::delete("assets/uploads/users/" . $user->image);
+            }
+
+            $imageName  = "user_" . Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path('assets/uploads/users/'), $imageName);
+            $user->image  =  $imageName;
+        }
+
+        $user->save();
+
+        Session::flash("success","Data Saved");
+
+        return redirect(route('cms.user.index'));
     }
 }

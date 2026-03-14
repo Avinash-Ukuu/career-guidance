@@ -4,9 +4,6 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="javascript:void(0)" class="nav-link">Home</a>
-        </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -22,6 +19,7 @@
                 <div class="dropdown-divider"></div>
 
                 <div class="dropdown-divider"></div>
+                <a href="{{ route('cms.profile') }}" class="dropdown-item">Profile</a>
                 <div class="dropdown-divider"></div>
                 <a href="javascript:void(0)" onclick="document.getElementById('logout-form').submit();"
                     class="dropdown-item">
