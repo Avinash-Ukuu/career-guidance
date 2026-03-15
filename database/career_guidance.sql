@@ -44,6 +44,42 @@ CREATE TABLE `cache_locks` (
 
 /*Data for the table `cache_locks` */
 
+/*Table structure for table `career_skill` */
+
+DROP TABLE IF EXISTS `career_skill`;
+
+CREATE TABLE `career_skill` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `career_id` bigint(20) unsigned NOT NULL,
+  `skill_id` bigint(20) unsigned NOT NULL,
+  `weight` int(11) DEFAULT 1,
+  PRIMARY KEY (`id`),
+  KEY `career_id` (`career_id`),
+  KEY `skill_id` (`skill_id`),
+  CONSTRAINT `career_skill_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `careers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `career_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `career_skill` */
+
+/*Table structure for table `careers` */
+
+DROP TABLE IF EXISTS `careers`;
+
+CREATE TABLE `careers` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `education_required` varchar(255) DEFAULT NULL,
+  `average_salary` varchar(100) DEFAULT NULL,
+  `future_scope` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `careers` */
+
 /*Table structure for table `failed_jobs` */
 
 DROP TABLE IF EXISTS `failed_jobs`;
@@ -118,6 +154,24 @@ insert  into `migrations`(`id`,`migration`,`batch`) values
 (2,'0001_01_01_000001_create_cache_table',1),
 (3,'0001_01_01_000002_create_jobs_table',1);
 
+/*Table structure for table `options` */
+
+DROP TABLE IF EXISTS `options`;
+
+CREATE TABLE `options` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `question_id` bigint(20) unsigned NOT NULL,
+  `option_text` varchar(255) NOT NULL,
+  `score` int(11) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `question_id` (`question_id`),
+  CONSTRAINT `options_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `options` */
+
 /*Table structure for table `password_reset_tokens` */
 
 DROP TABLE IF EXISTS `password_reset_tokens`;
@@ -130,6 +184,40 @@ CREATE TABLE `password_reset_tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `password_reset_tokens` */
+
+/*Table structure for table `questions` */
+
+DROP TABLE IF EXISTS `questions`;
+
+CREATE TABLE `questions` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `question` text NOT NULL,
+  `skill_id` bigint(20) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `skill_id` (`skill_id`),
+  CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `questions` */
+
+/*Table structure for table `roadmaps` */
+
+DROP TABLE IF EXISTS `roadmaps`;
+
+CREATE TABLE `roadmaps` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `career_id` bigint(20) unsigned NOT NULL,
+  `step_number` int(11) NOT NULL,
+  `step_title` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `career_id` (`career_id`),
+  CONSTRAINT `roadmaps_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `careers` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `roadmaps` */
 
 /*Table structure for table `sessions` */
 
@@ -154,6 +242,76 @@ insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last
 ('CWzhRKJMYXkcEvstzNMa6KH5g73MUNHK5Eb5DN9C',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiQndxWm9BVDRpdE5FUjl1VXRjb1hsQUVsZWZKRGRwcEQ0bmJySkZxRCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1OiJyb3V0ZSI7czo1OiJsb2dpbiI7fX0=',1773465612),
 ('tEFKbkj2wBGyIQJNW7hW87oYmt6NxDirqQtTVeIG',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoibVhSWUdOM3NyMVp3Q2lHY0RFeWhtWGNGU2hZTkVVcDFybmJFYTdzViI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvZGFzaGJvYXJkIjtzOjU6InJvdXRlIjtzOjEzOiJjbXMuZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9',1773473448);
 
+/*Table structure for table `skills` */
+
+DROP TABLE IF EXISTS `skills`;
+
+CREATE TABLE `skills` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `skills` */
+
+/*Table structure for table `student_answers` */
+
+DROP TABLE IF EXISTS `student_answers`;
+
+CREATE TABLE `student_answers` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `student_id` bigint(20) unsigned NOT NULL,
+  `question_id` bigint(20) unsigned NOT NULL,
+  `option_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `student_id` (`student_id`),
+  KEY `question_id` (`question_id`),
+  KEY `option_id` (`option_id`),
+  CONSTRAINT `student_answers_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `student_answers_ibfk_2` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `student_answers_ibfk_3` FOREIGN KEY (`option_id`) REFERENCES `options` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `student_answers` */
+
+/*Table structure for table `student_skill` */
+
+DROP TABLE IF EXISTS `student_skill`;
+
+CREATE TABLE `student_skill` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `student_id` bigint(20) unsigned NOT NULL,
+  `skill_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `student_id` (`student_id`),
+  KEY `skill_id` (`skill_id`),
+  CONSTRAINT `student_skill_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `student_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `student_skill` */
+
+/*Table structure for table `students` */
+
+DROP TABLE IF EXISTS `students`;
+
+CREATE TABLE `students` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned DEFAULT NULL,
+  `education` varchar(255) NOT NULL,
+  `interests` text DEFAULT NULL,
+  `skills` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `students_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `students` */
+
 /*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
@@ -165,7 +323,7 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `is_admin` tinyint(1) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -175,8 +333,8 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`image`,`is_admin`,`remember_token`,`created_at`,`updated_at`) values 
-(1,'admin','admin@gmail.com',NULL,'$2y$12$pKgacXHRkIA58c5TvJnGp.S7bj0wwPKT26fingQ4NM1pgXlQOaLN6',NULL,1,NULL,'2026-03-14 05:03:59','2026-03-14 05:03:59'),
+insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`image`,`role`,`remember_token`,`created_at`,`updated_at`) values 
+(1,'admin','admin@gmail.com',NULL,'$2y$12$pKgacXHRkIA58c5TvJnGp.S7bj0wwPKT26fingQ4NM1pgXlQOaLN6',NULL,'admin',NULL,'2026-03-14 05:03:59','2026-03-14 05:03:59'),
 (2,'test','test@gmail.com',NULL,'$2y$12$z./jgaBByKYYwnB0SaFMbuj1NO5i0qjWdzJ01Mxl0/rpZt2oKrtZe',NULL,NULL,NULL,'2026-03-14 05:04:44','2026-03-14 05:04:44');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
