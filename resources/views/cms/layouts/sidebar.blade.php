@@ -58,32 +58,32 @@
                     </a>
                 </li>
 
-                {{-- <li class="nav-item  @if (in_array(Route::currentRouteName(), ['cms.department.index', 'cms.department.create'])) menu-is-opening menu-open @endif">
-                    <a href="#" class="nav-link @if (in_array(Route::currentRouteName(), ['cms.department.index', 'cms.department.create'])) active @endif">
+                <li class="nav-item  @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) menu-is-opening menu-open @endif">
+                    <a href="#" class="nav-link @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) active @endif">
                         <i class="nav-icon fas fa-building"></i>
                         <p>
-                            Department
+                            Skill
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview" style="display: block;">
                         <li class="nav-item">
-                            <a href="{{ route('cms.department.index') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.department.index') active @endif ">
+                            <a href="{{ route('cms.skill.index') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'cms.skill.index') active @endif ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('cms.department.create') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.department.create') active @endif">
+                            <a href="{{ route('cms.skill.create') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'cms.skill.create') active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create</p>
                             </a>
                         </li>
 
                     </ul>
-                </li> --}}
+                </li>
 
                 {{-- Department --}}
                 {{-- <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.department.index', 'cms.department.create'])) menu-open @endif">
