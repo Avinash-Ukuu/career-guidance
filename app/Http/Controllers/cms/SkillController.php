@@ -40,7 +40,7 @@ class SkillController extends Controller
             'name'          => 'required|string|max:255'
         ]);
 
-        $skill          =   new skill();
+        $skill          =   new Skill();
         $skill->name    =   $request->name;
 
         $skill->save();

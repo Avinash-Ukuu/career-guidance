@@ -85,29 +85,28 @@
                     </ul>
                 </li>
 
-                {{-- Department --}}
-                {{-- <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.department.index', 'cms.department.create'])) menu-open @endif">
-                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.department.index', 'cms.department.create'])) active @endif">
+                <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create'])) menu-open @endif">
+                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create'])) active @endif">
                         <i class="nav-icon fas fa-building"></i>
-                        <p> Department <i class="right fas fa-angle-left"></i></p>
+                        <p> Career <i class="right fas fa-angle-left"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('cms.department.index') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.department.index') active @endif">
+                            <a href="{{ route('cms.career.index') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'cms.career.index') active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('cms.department.create') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.department.create') active @endif">
+                            <a href="{{ route('cms.career.create') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'cms.career.create') active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create</p>
                             </a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
 
 
             </ul>

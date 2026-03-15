@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\cms\CareerController;
 use App\Http\Controllers\cms\DashboardController;
 use App\Http\Controllers\cms\SkillController;
 use App\Http\Controllers\cms\UserController;
@@ -13,7 +14,9 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     Route::get("/change/password",  [UserController::class,'changePassword'])->name("changePassword");
     Route::post("/update/password", [UserController::class,'updatePassword'])->name("updatePassword");
 
-    //skill
-
+    //Skill
     Route::resource('skill',        SkillController::class);
+
+    //Career
+    Route::resource('career',       CareerController::class);
 });

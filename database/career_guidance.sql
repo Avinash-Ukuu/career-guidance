@@ -58,9 +58,12 @@ CREATE TABLE `career_skill` (
   KEY `skill_id` (`skill_id`),
   CONSTRAINT `career_skill_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `careers` (`id`) ON DELETE CASCADE,
   CONSTRAINT `career_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `career_skill` */
+
+insert  into `career_skill`(`id`,`career_id`,`skill_id`,`weight`) values 
+(1,1,1,1);
 
 /*Table structure for table `careers` */
 
@@ -76,9 +79,12 @@ CREATE TABLE `careers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `careers` */
+
+insert  into `careers`(`id`,`name`,`description`,`education_required`,`average_salary`,`future_scope`,`created_at`,`updated_at`) values 
+(1,'Web Developer','Build websites','BCA / BTech','4 LPA','High demand','2026-03-15 10:45:24','2026-03-15 10:45:24');
 
 /*Table structure for table `failed_jobs` */
 
@@ -238,9 +244,7 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last_activity`) values 
-('cSM20AWFfkF1RJaYLmvqXDZR5vcP8LPSY2AWYaAK',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiTW5sN0RoTDJJTUZTWDU0cWpOTzNwYVlGb0VGRXh2QWZJR0hvRDVTdiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvdXNlciI7czo1OiJyb3V0ZSI7czoxNDoiY21zLnVzZXIuaW5kZXgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=',1773474434),
-('CWzhRKJMYXkcEvstzNMa6KH5g73MUNHK5Eb5DN9C',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiQndxWm9BVDRpdE5FUjl1VXRjb1hsQUVsZWZKRGRwcEQ0bmJySkZxRCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9sb2dpbiI7czo1OiJyb3V0ZSI7czo1OiJsb2dpbiI7fX0=',1773465612),
-('tEFKbkj2wBGyIQJNW7hW87oYmt6NxDirqQtTVeIG',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoibVhSWUdOM3NyMVp3Q2lHY0RFeWhtWGNGU2hZTkVVcDFybmJFYTdzViI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvZGFzaGJvYXJkIjtzOjU6InJvdXRlIjtzOjEzOiJjbXMuZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9',1773473448);
+('vqfDk0jWPpB6zpp9qNl57dQMLqT4drGDe9hcT2WP',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo1OntzOjY6Il90b2tlbiI7czo0MDoieG8xWlpWWUlWR2xXZkJpMHB5M2s5QXdYOVBlamlINjk5NEFXSXdrbSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjMyOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvY21zL2NhcmVlciI7czo1OiJyb3V0ZSI7czoxNjoiY21zLmNhcmVlci5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==',1773571936);
 
 /*Table structure for table `skills` */
 
@@ -252,9 +256,16 @@ CREATE TABLE `skills` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `skills` */
+
+insert  into `skills`(`id`,`name`,`created_at`,`updated_at`) values 
+(1,'Programming','2026-03-15 10:08:39','2026-03-15 10:08:51'),
+(2,'Communication','2026-03-15 10:09:09','2026-03-15 10:09:09'),
+(3,'Mathematics','2026-03-15 10:09:22','2026-03-15 10:09:22'),
+(4,'Design','2026-03-15 10:09:34','2026-03-15 10:09:34'),
+(5,'Problem Solving','2026-03-15 10:09:45','2026-03-15 10:09:45');
 
 /*Table structure for table `student_answers` */
 
