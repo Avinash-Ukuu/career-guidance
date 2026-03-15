@@ -1,47 +1,63 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends(('auth.layouts.master'))
+@section('content')
+    <main class="page-wrap">
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+        <section class="banner">
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+            <div class="aurora aurora-one"></div>
+            <div class="aurora aurora-two"></div>
+            <div class="noise"></div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <p class="kicker">Login Form</p>
+            <h1>Career Guidance for Students</h1>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <p class="subtitle">
+                Discover pathways, build confidence, and choose the right future with
+                smart mentoring and focused planning.
+            </p>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <!-- LOGIN FORM -->
+            <div style="margin-top:40px; max-width:420px;">
+                <x-auth-session-status class="mb-4" :status="session('status')" />
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <!-- Email -->
+                    <div style="margin-bottom:15px;">
+                        <label style="font-weight:600;">Email</label>
+                        <input type="email" name="email" value="{{ old('email') }}" required autofocus
+                            style="width:100%; padding:10px; border-radius:10px; border:none; margin-top:6px;">
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+                    <!-- Password -->
+                    <div style="margin-bottom:15px;">
+                        <label style="font-weight:600;">Password</label>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+                        <input type="password" name="password" required
+                            style="width:100%; padding:10px; border-radius:10px; border:none; margin-top:6px;">
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    </div>
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+                    <!-- Remember Me -->
+
+                    <div style="margin-bottom:15px;">
+                        <label style="display:flex; gap:6px;">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                        </label>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <button class="btn btn-register">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="meta-row">
+                <span class="badge">Made by <strong>JASKARAN</strong></span>
+                <span class="pulse-dot"></span>
+            </div>
+            <div class="shine"></div>
+        </section>
+    </main>
+@endsection
