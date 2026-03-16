@@ -16,7 +16,7 @@
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title">Skill List</h3>
+                <h3 class="card-title">Skill Form</h3>
             </div>
             <div class="card-body">
                 <form action="{{ $url }}" method="POST" enctype="multipart/form-data">

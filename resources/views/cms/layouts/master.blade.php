@@ -62,8 +62,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2026-2027 <a href="https://www.codeacademics.in/" target="_blank">Code
-                    Academics</a>.</strong>
+            <strong>Copyright &copy; 2026-2027 <a href="javascript:void(0)" target="_blank">Adminlte3</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0

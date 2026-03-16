@@ -69,7 +69,7 @@
                 </form>
             </div>
             <div class="meta-row">
-                <span class="badge">Made by <strong>JASKARAN</strong></span>
+                <span class="badge">Made by <strong>JASKARAN & ISHITA</strong></span>
                 <span class="pulse-dot"></span>
                 <span class="live-text">
             </div>

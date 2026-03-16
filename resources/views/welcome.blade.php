@@ -22,7 +22,7 @@
             </p>
 
             <div class="meta-row">
-                <span class="badge">Made by <strong>JASKARAN</strong></span>
+                <span class="badge">Made by <strong>JASKARAN & ISHITA</strong></span>
                 <span class="pulse-dot" aria-hidden="true"></span>
             </div>
 

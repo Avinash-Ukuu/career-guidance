@@ -60,7 +60,7 @@
 
                 <li class="nav-item  @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) menu-is-opening menu-open @endif">
                     <a href="#" class="nav-link @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) active @endif">
-                        <i class="nav-icon fas fa-building"></i>
+                        <i class="nav-icon fa fa-lightbulb"></i>
                         <p>
                             Skill
                             <i class="right fas fa-angle-left"></i>
@@ -87,7 +87,7 @@
 
                 <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create'])) menu-open @endif">
                     <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create'])) active @endif">
-                        <i class="nav-icon fas fa-building"></i>
+                        <i class="nav-icon fas fa-user-graduate"></i>
                         <p> Career <i class="right fas fa-angle-left"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
