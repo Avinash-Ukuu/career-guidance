@@ -14,7 +14,7 @@
                 </div>
             </header>
 
-            <p class="kicker">College Project Showcase</p>
+            {{-- <p class="kicker">College Project Showcase</p> --}}
             <h1>Career Guidance for Students</h1>
             <p class="subtitle">
                 Discover pathways, build confidence, and choose the right future with
