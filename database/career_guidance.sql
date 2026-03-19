@@ -58,12 +58,15 @@ CREATE TABLE `career_skill` (
   KEY `skill_id` (`skill_id`),
   CONSTRAINT `career_skill_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `careers` (`id`) ON DELETE CASCADE,
   CONSTRAINT `career_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `career_skill` */
 
 insert  into `career_skill`(`id`,`career_id`,`skill_id`,`weight`) values 
-(1,1,1,1);
+(1,1,1,1),
+(3,2,1,1),
+(4,2,3,1),
+(5,2,5,1);
 
 /*Table structure for table `careers` */
 
@@ -79,12 +82,13 @@ CREATE TABLE `careers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `careers` */
 
 insert  into `careers`(`id`,`name`,`description`,`education_required`,`average_salary`,`future_scope`,`created_at`,`updated_at`) values 
-(1,'Web Developer','Build websites','BCA / BTech','4 LPA','High demand','2026-03-15 10:45:24','2026-03-15 10:45:24');
+(1,'Web Developer','Build websites','BCA / BTech','4 LPA','High demand','2026-03-15 10:45:24','2026-03-15 10:45:24'),
+(2,'Data Analyst','Understand data handling, formulas, charts, and basic analysis in Excel.','BCA / BTech','4 LPA','High demand','2026-03-19 05:44:57','2026-03-19 05:44:57');
 
 /*Table structure for table `failed_jobs` */
 
@@ -215,15 +219,30 @@ DROP TABLE IF EXISTS `roadmaps`;
 CREATE TABLE `roadmaps` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `career_id` bigint(20) unsigned NOT NULL,
-  `step_number` int(11) NOT NULL,
-  `step_title` varchar(255) NOT NULL,
+  `step` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `career_id` (`career_id`),
   CONSTRAINT `roadmaps_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `careers` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `roadmaps` */
+
+insert  into `roadmaps`(`id`,`career_id`,`step`,`title`,`description`,`created_at`,`updated_at`) values 
+(1,1,1,'Learn Basics of Computer & Internet','Understand how websites work, what is browser, server, HTTP/HTTPS, and basic computer knowledge.','2026-03-19 05:39:43','2026-03-19 05:40:38'),
+(2,1,2,'Learn HTML','Learn structure of web pages using HTML like headings, forms, tables, links, images.','2026-03-19 05:40:56','2026-03-19 05:40:56'),
+(3,1,3,'Learn CSS','Learn styling using CSS, colors, layout, flexbox, grid and responsive design.','2026-03-19 05:41:19','2026-03-19 05:41:19'),
+(4,1,4,'Learn JavaScript','Learn basic JavaScript like variables, functions, DOM manipulation, events.','2026-03-19 05:41:43','2026-03-19 05:41:43'),
+(5,1,5,'Learn Frontend Framework','Learn React.js or Vue.js to build modern UI and dynamic websites.','2026-03-19 05:42:18','2026-03-19 05:42:18'),
+(6,1,6,'Learn Backend Development','Learn PHP (Laravel) or Node.js to handle server, database, and APIs.','2026-03-19 05:43:06','2026-03-19 05:43:06'),
+(7,2,1,'Learn Excel Basics','Understand data handling, formulas, charts, and basic analysis in Excel.','2026-03-19 05:45:19','2026-03-19 05:45:19'),
+(8,2,2,'Learn SQL','Learn how to fetch and manage data using SQL queries.','2026-03-19 05:45:37','2026-03-19 05:45:37'),
+(9,2,3,'Learn Python','Use Python for data analysis with libraries like Pandas and NumPy.','2026-03-19 05:45:51','2026-03-19 05:45:51'),
+(10,2,4,'Data Visualization','Learn tools like Power BI or Tableau to create dashboards and reports.','2026-03-19 05:46:09','2026-03-19 05:46:09'),
+(11,2,5,'Build Projects','Work on datasets and create real-world analysis projects.','2026-03-19 05:46:28','2026-03-19 05:46:35');
 
 /*Table structure for table `sessions` */
 
@@ -244,7 +263,7 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last_activity`) values 
-('vqfDk0jWPpB6zpp9qNl57dQMLqT4drGDe9hcT2WP',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo1OntzOjY6Il90b2tlbiI7czo0MDoieG8xWlpWWUlWR2xXZkJpMHB5M2s5QXdYOVBlamlINjk5NEFXSXdrbSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjMyOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvY21zL2NhcmVlciI7czo1OiJyb3V0ZSI7czoxNjoiY21zLmNhcmVlci5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==',1773571936);
+('kHFj1IGR3CNdlBlR1YlKeNoDxjUoaK42R5WxNEPR',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZ3A2WHhocTBwYjVXWldJaWZ4WVprdEExc2tRMG9vREE2SEh1ZG1RNyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXJvYWRtYXBzLzIiO3M6NToicm91dGUiO3M6MTg6ImNtcy5yb2FkbWFwLm1hbmFnZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==',1773899195);
 
 /*Table structure for table `skills` */
 

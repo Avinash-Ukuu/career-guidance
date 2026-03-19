@@ -66,7 +66,7 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview" style="display: block;">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('cms.skill.index') }}"
                                 class="nav-link @if (Route::currentRouteName() == 'cms.skill.index') active @endif ">
@@ -85,8 +85,8 @@
                     </ul>
                 </li>
 
-                <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create'])) menu-open @endif">
-                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create'])) active @endif">
+                <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create','cms.roadmap.index'])) menu-open @endif">
+                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create','cms.roadmap.index'])) active @endif">
                         <i class="nav-icon fas fa-user-graduate"></i>
                         <p> Career <i class="right fas fa-angle-left"></i></p>
                     </a>
@@ -103,6 +103,13 @@
                                 class="nav-link @if (Route::currentRouteName() == 'cms.career.create') active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Create</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('cms.roadmap.index') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'cms.roadmap.index') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Carrer Roadmap</p>
                             </a>
                         </li>
                     </ul>

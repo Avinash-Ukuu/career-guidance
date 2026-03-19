@@ -19,6 +19,6 @@ class Career extends Model
 
     public function roadmaps():HasMany
     {
-        return $this->hasMany(Roadmap::class);
+        return $this->hasMany(Roadmap::class)->orderBy('step');
     }
 }
