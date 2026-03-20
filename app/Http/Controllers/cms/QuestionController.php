@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\cms;
 
 use App\Http\Controllers\Controller;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -12,7 +13,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::with('skill')->get();
+
+        return view('cms.question.index', compact('questions'));
     }
 
     /**
