@@ -13,10 +13,6 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     Route::get('dashboard',         [DashboardController::class,'dashboard'])->name('dashboard');
         Route::middleware(['admin'])->group(function () {
         Route::resource('user',         UserController::class);
-        Route::get('profile',           [UserController::class,'profile'])->name('profile');
-        Route::put('update-profile',    [UserController::class,'updateProfile'])->name('updateProfile');
-        Route::get("/change/password",  [UserController::class,'changePassword'])->name("changePassword");
-        Route::post("/update/password", [UserController::class,'updatePassword'])->name("updatePassword");
 
         //Skill
         Route::resource('skill',        SkillController::class);
@@ -31,6 +27,11 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
         //Question
         Route::resource('question',     QuestionController::class);
     });
+    //Profile and passwords
+    Route::get('profile',           [UserController::class,'profile'])->name('profile');
+    Route::put('update-profile',    [UserController::class,'updateProfile'])->name('updateProfile');
+    Route::get("/change/password",  [UserController::class,'changePassword'])->name("changePassword");
+    Route::post("/update/password", [UserController::class,'updatePassword'])->name("updatePassword");
     //Student Profile
     Route::get('student',           [StudentProfileController::class,'index'])->name('student');
     Route::post('student-update',   [StudentProfileController::class,'update'])->name('student.update');
