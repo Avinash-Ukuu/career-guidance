@@ -50,95 +50,99 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('cms.user.index') }}"
-                        class="nav-link @if (Route::currentRouteName() == 'cms.user.index') active @endif">
-                        <i class="nav-icon fa fa-users"></i>
-                        <p class="text">Users</p>
-                    </a>
-                </li>
+                @if(auth()->user()->role == 'admin')
+                    <li class="nav-item">
+                        <a href="{{ route('cms.user.index') }}"
+                            class="nav-link @if (Route::currentRouteName() == 'cms.user.index') active @endif">
+                            <i class="nav-icon fa fa-users"></i>
+                            <p class="text">Users</p>
+                        </a>
+                    </li>
 
-                <li class="nav-item  @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) menu-is-opening menu-open @endif">
-                    <a href="#" class="nav-link @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) active @endif">
-                        <i class="nav-icon fa fa-lightbulb"></i>
-                        <p>
-                            Skill
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('cms.skill.index') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.skill.index') active @endif ">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('cms.skill.create') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.skill.create') active @endif">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create</p>
-                            </a>
-                        </li>
+                    <li class="nav-item  @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) menu-is-opening menu-open @endif">
+                        <a href="#" class="nav-link @if (in_array(Route::currentRouteName(), ['cms.skill.index', 'cms.skill.create'])) active @endif">
+                            <i class="nav-icon fa fa-lightbulb"></i>
+                            <p>
+                                Skill
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('cms.skill.index') }}"
+                                    class="nav-link @if (Route::currentRouteName() == 'cms.skill.index') active @endif ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('cms.skill.create') }}"
+                                    class="nav-link @if (Route::currentRouteName() == 'cms.skill.create') active @endif">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                </a>
+                            </li>
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
-                <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create','cms.roadmap.index'])) menu-open @endif">
-                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create','cms.roadmap.index'])) active @endif">
-                        <i class="nav-icon fas fa-user-graduate"></i>
-                        <p> Career <i class="right fas fa-angle-left"></i></p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('cms.career.index') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.career.index') active @endif">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('cms.career.create') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.career.create') active @endif">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('cms.roadmap.index') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.roadmap.index') active @endif">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Carrer Roadmap</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create','cms.roadmap.index'])) menu-open @endif">
+                        <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.career.index', 'cms.career.create','cms.roadmap.index'])) active @endif">
+                            <i class="nav-icon fas fa-user-graduate"></i>
+                            <p> Career <i class="right fas fa-angle-left"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('cms.career.index') }}"
+                                    class="nav-link @if (Route::currentRouteName() == 'cms.career.index') active @endif">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('cms.career.create') }}"
+                                    class="nav-link @if (Route::currentRouteName() == 'cms.career.create') active @endif">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('cms.roadmap.index') }}"
+                                    class="nav-link @if (Route::currentRouteName() == 'cms.roadmap.index') active @endif">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Carrer Roadmap</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-                <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.question.index', 'cms.question.create'])) menu-open @endif">
-                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.question.index', 'cms.question.create'])) active @endif">
-                        <i class="nav-icon fas fa-question"></i>
-                        <p> Question <i class="right fas fa-angle-left"></i></p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('cms.question.index') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.question.index') active @endif">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('cms.question.create') }}"
-                                class="nav-link @if (Route::currentRouteName() == 'cms.question.create') active @endif">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="nav-item @if (in_array(Route::currentRouteName(), ['cms.question.index', 'cms.question.create'])) menu-open @endif">
+                        <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['cms.question.index', 'cms.question.create'])) active @endif">
+                            <i class="nav-icon fas fa-question"></i>
+                            <p> Question <i class="right fas fa-angle-left"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('cms.question.index') }}"
+                                    class="nav-link @if (Route::currentRouteName() == 'cms.question.index') active @endif">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('cms.question.create') }}"
+                                    class="nav-link @if (Route::currentRouteName() == 'cms.question.create') active @endif">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Create</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                @else
 
 
+                @endif
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
