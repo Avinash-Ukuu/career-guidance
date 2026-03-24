@@ -41,6 +41,10 @@
     <link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/summernote/summernote-bs4.min.css') }}">
      <!-- toastr -->
     <link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/toastr/toastr.min.css') }}">
+    <!-- select2 -->
+    <link rel="stylesheet" href="{{ asset('assets/adminlte/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     @yield('headerLinks')
 </head>
 
@@ -121,6 +125,7 @@
     <script src="{{ asset('assets/adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
     <!-- Toastr -->
     <script src="{{ asset('assets/adminlte/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ asset('assets/adminlte/plugins/select2/js/select2.full.min.js') }}"></script>
     @yield('footerScript')
     <script>
 
@@ -150,6 +155,11 @@
 
         $(document).ready(function() {
             $('#summernote').summernote();
+
+            $('.select2').select2({
+                theme: "bootstrap4",
+                allowClear: true
+            });
         });
     </script>
 </body>

@@ -138,10 +138,14 @@
                             </li>
                         </ul>
                     </li>
-
                 @else
-
-
+                    <li class="nav-item">
+                        <a href="{{ route('cms.information') }}"
+                            class="nav-link @if (Route::currentRouteName() == 'cms.information') active @endif">
+                            <i class="nav-icon fa fa-user-edit"></i>
+                            <p class="text">Information</p>
+                        </a>
+                    </li>
                 @endif
             </ul>
         </nav>

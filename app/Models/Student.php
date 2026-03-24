@@ -21,7 +21,7 @@ class Student extends Model
 
     public function skills():BelongsToMany
     {
-        return $this->belongsToMany(Skill::class);
+        return $this->belongsToMany(Skill::class,'student_skill');
     }
 
     public function studentAnswers():HasMany

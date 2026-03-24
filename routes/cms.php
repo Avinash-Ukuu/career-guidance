@@ -33,6 +33,6 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     Route::get("/change/password",  [UserController::class,'changePassword'])->name("changePassword");
     Route::post("/update/password", [UserController::class,'updatePassword'])->name("updatePassword");
     //Student Profile
-    Route::get('student',           [StudentProfileController::class,'index'])->name('student');
-    Route::post('student-update',   [StudentProfileController::class,'update'])->name('student.update');
+    Route::get('student',           [StudentProfileController::class,'information'])->name('information');
+    Route::post('student-update',   [StudentProfileController::class,'storeInformation'])->name('student.storeInformation');
 });
