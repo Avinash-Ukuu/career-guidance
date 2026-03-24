@@ -208,12 +208,14 @@ CREATE TABLE `questions` (
   PRIMARY KEY (`id`),
   KEY `skill_id` (`skill_id`),
   CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `questions` */
 
 insert  into `questions`(`id`,`question`,`skill_id`,`created_at`,`updated_at`) values 
-(1,'what is web designs',4,'2026-03-23 04:43:38','2026-03-23 04:44:35');
+(1,'what is web designs',4,'2026-03-23 04:43:38','2026-03-23 04:44:35'),
+(3,'what is Ui/UX',4,'2026-03-24 09:06:35','2026-03-24 09:06:35'),
+(4,'What does HTML stand for?',1,'2026-03-24 10:24:48','2026-03-24 10:24:48');
 
 /*Table structure for table `roadmaps` */
 
@@ -266,7 +268,9 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last_activity`) values 
-('NwKEtPVM3ECGXW972YKStuRf0V1Uy1KfyBIVb50H',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoidUhvdW1VSUtXSkhwRnQ0Q3VzS3lCSmEwZmN1RHF1b2U3UDFRNHE4cSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvc3R1ZGVudCI7czo1OiJyb3V0ZSI7czoxNToiY21zLmluZm9ybWF0aW9uIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9',1774337255);
+('1OGzE7UrpSyaS4htNUeKVlyaJOJHv5Krh2DCmnib',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMGZnQnhZVHBXREt0bXhaS0hSZ1BlR0gwR202aWh2ckRvUXkxdjJ3NSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXJvYWRtYXBzLzIiO3M6NToicm91dGUiO3M6MTg6ImNtcy5yb2FkbWFwLm1hbmFnZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==',1774347916),
+('IYXRNmp6oWdoLocksHIuafOrDnrOuVgkUJyMA9Di',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoib3BPcERuUWNTQjdpcE9ibTljalVKNFppTjcyUDY2QWczSWw3bkxSbSI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2Ntcy9jYXJlZXItdGVzdCI7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbG9naW4iO3M6NToicm91dGUiO3M6NToibG9naW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19',1774347867),
+('NwKEtPVM3ECGXW972YKStuRf0V1Uy1KfyBIVb50H',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoidUhvdW1VSUtXSkhwRnQ0Q3VzS3lCSmEwZmN1RHF1b2U3UDFRNHE4cSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXRlc3QiO3M6NToicm91dGUiO3M6MTQ6ImNtcy5jYXJlZXJUZXN0Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9',1774338583);
 
 /*Table structure for table `skills` */
 

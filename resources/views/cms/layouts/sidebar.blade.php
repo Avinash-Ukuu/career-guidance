@@ -146,6 +146,13 @@
                             <p class="text">Information</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('cms.careerTest') }}"
+                            class="nav-link @if (Route::currentRouteName() == 'cms.careerTest') active @endif">
+                            <i class="nav-icon fas fa-question"></i>
+                            <p class="text">Career Test</p>
+                        </a>
+                    </li>
                 @endif
             </ul>
         </nav>
