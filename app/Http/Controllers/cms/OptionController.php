@@ -16,8 +16,9 @@ class OptionController extends Controller
     public function index()
     {
         $options    =   Option::with('question')->latest()->get();
+        $questions  =   Question::all();
 
-        return view('cms.option.index', compact('options'));
+        return view('cms.option.index', compact('options','questions'));
     }
 
     /**
@@ -41,7 +42,7 @@ class OptionController extends Controller
         $request->validate([
             'question_id'   => 'required|exists:questions,id',
             'option_text'   => 'required|string|max:255',
-            'score'         => 'required|integer|min:1|max:10',
+            'score'         => 'required|integer|min:0|max:10',
         ]);
 
         Option::create($request->all());
@@ -84,13 +85,13 @@ class OptionController extends Controller
         $request->validate([
             'question_id'   => 'required|exists:questions,id',
             'option_text'   => 'required|string|max:255',
-            'score'         => 'required|integer|min:1|max:10',
+            'score'         => 'required|integer|min:0|max:10',
         ]);
 
         $option     =       Option::find($id);
         $option->update($request->all());
 
-        return redirect()->route('options.index')->with('success', 'Option Updated');
+        return redirect()->route('cms.option.index')->with('success', 'Option Updated');
     }
 
     /**

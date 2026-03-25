@@ -27,23 +27,35 @@
                     @endif
 
                      <!-- Question -->
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label>Question</label>
                         <select name="question_id" class="form-control">
+                            <option >Select Question</option>
                             @foreach($questions as $q)
                                 <option value="{{ $q->id }}"
-                                    {{ (isset($question) && $question->id == $q->id) ? 'selected' : '' }}>
+                                    {{-- {{ (isset($question) && $question->id == $q->id) ? 'selected' : '' }}> --}}
+                                    {{ ($q->id ==  $object->question_id) ? 'selected' : '' }}>
                                     {{ $q->question }}
                                 </option>
                             @endforeach
                         </select>
                     </div>
-                    {{-- Name --}}
-                    <div class="form-group">
+                    {{-- Option --}}
+                    <div class="form-group mb-2">
                         <label>Option</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                            value="{{ old('name', $object->name ?? '') }}">
-                        @error('name')
+                        <input type="text" name="option_text" class="form-control @error('option_text') is-invalid @enderror"
+                            value="{{ old('option_text', $object->option_text ?? '') }}">
+                        @error('option_text')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    {{-- Score --}}
+                    <div class="form-group mb-2">
+                        <label>Score</label>
+                        <input type="text" name="score" class="form-control @error('score') is-invalid @enderror"
+                            value="{{ old('score', $object->score ?? '') }}">
+                        @error('score')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

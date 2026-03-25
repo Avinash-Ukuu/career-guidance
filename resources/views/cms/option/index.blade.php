@@ -24,21 +24,21 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Question</th>
-                                <th>Option 1</th>
-                                <th>Option 2</th>
-                                <th>Option 3</th>
-                                <th>Option 4</th>
+                                <th>Option</th>
+                                <th>Score</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($skills as $skill)
+                            @foreach ($options as $option)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $skill->name }}</td>
+                                    <td>{{ $option->question->question }}</td>
+                                    <td>{{ $option->option_text }}</td>
+                                    <td>{{ $option->score }}</td>
                                     <td>
                                         <div class="row">
-                                            <a href="{{ route('cms.skill.edit', ['skill' => $skill->id]) }}"><i
+                                            <a href="{{ route('cms.option.edit', ['option' => $option->id]) }}"><i
                                                     class="fa fa-edit"></i></a>
                                         </div>
                                     </td>
