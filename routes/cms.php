@@ -47,6 +47,6 @@ Route::prefix('cms')->name('cms.')->middleware(['auth'])->group(function () {
     Route::get('/career-test',[CareerTestController::class,'index'])->name('careerTest');
     Route::post('/career-test',[CareerTestController::class,'submit'])->name('store.careerTest');
 
-// Route::get('/career-result',[RecommendationController::class,'result'])->name('careerResult');
+    Route::get('/career-result',[CareerTestController::class,'result'])->name('careerResult');
 
 });

@@ -178,9 +178,15 @@ CREATE TABLE `options` (
   PRIMARY KEY (`id`),
   KEY `question_id` (`question_id`),
   CONSTRAINT `options_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `options` */
+
+insert  into `options`(`id`,`question_id`,`option_text`,`score`,`created_at`,`updated_at`) values 
+(1,4,'Hardware Markup Language',0,'2026-03-25 05:06:16','2026-03-25 05:11:18'),
+(2,4,'Hyperlink Markup Language',0,'2026-03-25 05:11:38','2026-03-25 05:11:38'),
+(3,4,'High Level Markup Language',0,'2026-03-25 05:11:55','2026-03-25 05:11:55'),
+(4,4,'Hypertext Machine Language',10,'2026-03-25 05:12:12','2026-03-25 05:12:12');
 
 /*Table structure for table `password_reset_tokens` */
 
@@ -268,9 +274,7 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last_activity`) values 
-('1OGzE7UrpSyaS4htNUeKVlyaJOJHv5Krh2DCmnib',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMGZnQnhZVHBXREt0bXhaS0hSZ1BlR0gwR202aWh2ckRvUXkxdjJ3NSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXJvYWRtYXBzLzIiO3M6NToicm91dGUiO3M6MTg6ImNtcy5yb2FkbWFwLm1hbmFnZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==',1774347916),
-('IYXRNmp6oWdoLocksHIuafOrDnrOuVgkUJyMA9Di',NULL,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoib3BPcERuUWNTQjdpcE9ibTljalVKNFppTjcyUDY2QWczSWw3bkxSbSI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2Ntcy9jYXJlZXItdGVzdCI7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbG9naW4iO3M6NToicm91dGUiO3M6NToibG9naW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19',1774347867),
-('NwKEtPVM3ECGXW972YKStuRf0V1Uy1KfyBIVb50H',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoidUhvdW1VSUtXSkhwRnQ0Q3VzS3lCSmEwZmN1RHF1b2U3UDFRNHE4cSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXRlc3QiO3M6NToicm91dGUiO3M6MTQ6ImNtcy5jYXJlZXJUZXN0Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9',1774338583);
+('frbWCnCUX98RKNWlFC4Sh3OTmLyjBLqb69Ay4s9b',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZHJ6Q3ROUENmZnZyNk82RElpMU5LWVl1WUR5a2hkcm0yZnFQS0k3cSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXRlc3QiO3M6NToicm91dGUiO3M6MTQ6ImNtcy5jYXJlZXJUZXN0Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9',1774420923);
 
 /*Table structure for table `skills` */
 
@@ -302,6 +306,9 @@ CREATE TABLE `student_answers` (
   `student_id` bigint(20) unsigned NOT NULL,
   `question_id` bigint(20) unsigned NOT NULL,
   `option_id` bigint(20) unsigned NOT NULL,
+  `score` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   KEY `question_id` (`question_id`),
@@ -309,9 +316,12 @@ CREATE TABLE `student_answers` (
   CONSTRAINT `student_answers_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_answers_ibfk_2` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_answers_ibfk_3` FOREIGN KEY (`option_id`) REFERENCES `options` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `student_answers` */
+
+insert  into `student_answers`(`id`,`student_id`,`question_id`,`option_id`,`score`,`created_at`,`updated_at`) values 
+(2,2,4,1,0,'2026-03-25 06:41:51','2026-03-25 06:41:51');
 
 /*Table structure for table `student_skill` */
 
