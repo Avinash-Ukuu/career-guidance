@@ -58,15 +58,30 @@ CREATE TABLE `career_skill` (
   KEY `skill_id` (`skill_id`),
   CONSTRAINT `career_skill_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `careers` (`id`) ON DELETE CASCADE,
   CONSTRAINT `career_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `career_skill` */
 
 insert  into `career_skill`(`id`,`career_id`,`skill_id`,`weight`) values 
-(1,1,1,1),
-(3,2,1,1),
-(4,2,3,1),
-(5,2,5,1);
+(1,2,1,1),
+(2,2,5,1),
+(3,2,8,1),
+(4,1,1,1),
+(5,1,4,1),
+(6,1,5,1),
+(7,1,8,1),
+(8,3,6,1),
+(9,3,4,1),
+(10,4,2,1),
+(11,4,6,1),
+(12,4,8,1),
+(13,5,2,1),
+(14,5,7,1),
+(15,6,2,1),
+(16,6,5,1),
+(17,6,9,1),
+(18,7,5,1),
+(19,7,10,1);
 
 /*Table structure for table `careers` */
 
@@ -82,13 +97,18 @@ CREATE TABLE `careers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `careers` */
 
 insert  into `careers`(`id`,`name`,`description`,`education_required`,`average_salary`,`future_scope`,`created_at`,`updated_at`) values 
-(1,'Web Developer','Build websites','BCA / BTech','4 LPA','High demand','2026-03-15 10:45:24','2026-03-15 10:45:24'),
-(2,'Data Analyst','Understand data handling, formulas, charts, and basic analysis in Excel.','BCA / BTech','4 LPA','High demand','2026-03-19 05:44:57','2026-03-19 05:44:57');
+(1,'Software Developer','Build software, apps, and websites','BCA / BTech','4 LPA','High demand','2026-03-15 10:45:24','2026-03-26 06:37:40'),
+(2,'Data Analyst','Analyze data and generate insights','BCA / BTech','4 LPA','High demand','2026-03-19 05:44:57','2026-03-26 06:36:31'),
+(3,'Graphic Designer','Create visual designs, logos, and creatives','BCA / BTech/ Bsc IT','3 LPA','High demand','2026-03-26 06:38:30','2026-03-26 06:38:30'),
+(4,'Digital Marketer','Promote brands using online platforms','BBA/ MBA/ BCom','5 LPA','High demand','2026-03-26 06:39:46','2026-03-26 06:39:46'),
+(5,'HR Manager','Manage employees and hiring processes','Bachelor’s in HR/ BBA/ B.Com','4 LPA','Demand in every company','2026-03-26 06:41:35','2026-03-26 06:41:35'),
+(6,'Lawyer','Handle legal cases and provide legal advice','BA LLB/ BBA LLB','6 LPA','High demand','2026-03-26 06:46:54','2026-03-26 06:46:54'),
+(7,'Doctor','Diagnose and treat patients','NEET/ MBBS','8LPA','High demand','2026-03-26 06:51:15','2026-03-26 06:51:15');
 
 /*Table structure for table `failed_jobs` */
 
@@ -178,15 +198,35 @@ CREATE TABLE `options` (
   PRIMARY KEY (`id`),
   KEY `question_id` (`question_id`),
   CONSTRAINT `options_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `options` */
 
 insert  into `options`(`id`,`question_id`,`option_text`,`score`,`created_at`,`updated_at`) values 
-(1,4,'Hardware Markup Language',0,'2026-03-25 05:06:16','2026-03-25 05:11:18'),
-(2,4,'Hyperlink Markup Language',0,'2026-03-25 05:11:38','2026-03-25 05:11:38'),
-(3,4,'High Level Markup Language',0,'2026-03-25 05:11:55','2026-03-25 05:11:55'),
-(4,4,'Hypertext Machine Language',10,'2026-03-25 05:12:12','2026-03-25 05:12:12');
+(5,5,'Yes, very much',5,'2026-03-26 07:05:25','2026-03-26 07:05:25'),
+(6,5,'Somewhat',3,'2026-03-26 07:05:37','2026-03-26 07:05:37'),
+(7,5,'Not interested',1,'2026-03-26 07:05:51','2026-03-26 07:05:51'),
+(8,6,'Love solving problems',5,'2026-03-26 07:06:17','2026-03-26 07:06:17'),
+(9,6,'Sometimes',3,'2026-03-26 07:06:31','2026-03-26 07:06:31'),
+(10,6,'Not interested',1,'2026-03-26 07:06:46','2026-03-26 07:06:46'),
+(11,7,'Very creative',5,'2026-03-26 07:07:03','2026-03-26 07:07:03'),
+(12,7,'Average',3,'2026-03-26 07:07:15','2026-03-26 07:07:15'),
+(13,7,'Not interested',1,'2026-03-26 07:07:25','2026-03-26 07:07:25'),
+(14,8,'Very confident',5,'2026-03-26 07:07:44','2026-03-26 07:07:44'),
+(15,8,'Average',3,'2026-03-26 07:07:55','2026-03-26 07:07:55'),
+(16,8,'weak',1,'2026-03-26 07:08:04','2026-03-26 07:08:16'),
+(17,9,'Yes, I like leadership',5,'2026-03-26 07:08:34','2026-03-26 07:08:34'),
+(18,9,'Somewhat',3,'2026-03-26 07:08:50','2026-03-26 07:08:50'),
+(19,9,'No',1,'2026-03-26 07:08:59','2026-03-26 07:08:59'),
+(20,10,'Yes, I enjoy data',5,'2026-03-26 07:09:19','2026-03-26 07:09:19'),
+(21,10,'Somewhat',3,'2026-03-26 07:09:34','2026-03-26 07:09:34'),
+(22,10,'No',1,'2026-03-26 07:09:41','2026-03-26 07:09:41'),
+(23,11,'Yes, very interested',5,'2026-03-26 07:10:00','2026-03-26 07:10:00'),
+(24,11,'Little bit',3,'2026-03-26 07:10:14','2026-03-26 07:10:14'),
+(25,11,'No',1,'2026-03-26 07:10:21','2026-03-26 07:10:21'),
+(26,12,'Yes, very interested',5,'2026-03-26 07:10:53','2026-03-26 07:10:53'),
+(27,12,'Somewhat',3,'2026-03-26 07:11:01','2026-03-26 07:11:01'),
+(28,12,'No',1,'2026-03-26 07:11:11','2026-03-26 07:11:11');
 
 /*Table structure for table `password_reset_tokens` */
 
@@ -214,14 +254,22 @@ CREATE TABLE `questions` (
   PRIMARY KEY (`id`),
   KEY `skill_id` (`skill_id`),
   CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `questions` */
 
 insert  into `questions`(`id`,`question`,`skill_id`,`created_at`,`updated_at`) values 
 (1,'what is web designs',4,'2026-03-23 04:43:38','2026-03-23 04:44:35'),
 (3,'what is Ui/UX',4,'2026-03-24 09:06:35','2026-03-24 09:06:35'),
-(4,'What does HTML stand for?',1,'2026-03-24 10:24:48','2026-03-24 10:24:48');
+(4,'What does HTML stand for?',1,'2026-03-24 10:24:48','2026-03-24 10:24:48'),
+(5,'Do you enjoy coding and building apps?',1,'2026-03-26 07:02:25','2026-03-26 07:02:25'),
+(6,'Do you like solving complex problems?',5,'2026-03-26 07:02:40','2026-03-26 07:02:40'),
+(7,'Do you enjoy creative work like design?',6,'2026-03-26 07:02:54','2026-03-26 07:02:54'),
+(8,'Are you good at communication?',2,'2026-03-26 07:03:06','2026-03-26 07:03:06'),
+(9,'Do you like managing people?',7,'2026-03-26 07:03:22','2026-03-26 07:03:22'),
+(10,'Do you enjoy analyzing data?',8,'2026-03-26 07:03:35','2026-03-26 07:03:35'),
+(11,'Are you interested in legal systems?',9,'2026-03-26 07:03:46','2026-03-26 07:03:46'),
+(12,'Do you like studying biology and health?',10,'2026-03-26 07:04:00','2026-03-26 07:04:00');
 
 /*Table structure for table `roadmaps` */
 
@@ -238,7 +286,7 @@ CREATE TABLE `roadmaps` (
   PRIMARY KEY (`id`),
   KEY `career_id` (`career_id`),
   CONSTRAINT `roadmaps_ibfk_1` FOREIGN KEY (`career_id`) REFERENCES `careers` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `roadmaps` */
 
@@ -253,7 +301,17 @@ insert  into `roadmaps`(`id`,`career_id`,`step`,`title`,`description`,`created_a
 (8,2,2,'Learn SQL','Learn how to fetch and manage data using SQL queries.','2026-03-19 05:45:37','2026-03-19 05:45:37'),
 (9,2,3,'Learn Python','Use Python for data analysis with libraries like Pandas and NumPy.','2026-03-19 05:45:51','2026-03-19 05:45:51'),
 (10,2,4,'Data Visualization','Learn tools like Power BI or Tableau to create dashboards and reports.','2026-03-19 05:46:09','2026-03-19 05:46:09'),
-(11,2,5,'Build Projects','Work on datasets and create real-world analysis projects.','2026-03-19 05:46:28','2026-03-19 05:46:35');
+(11,2,5,'Build Projects','Work on datasets and create real-world analysis projects.','2026-03-19 05:46:28','2026-03-19 05:46:35'),
+(12,3,1,'Design Tools','Photoshop, Illustrator','2026-03-26 06:53:17','2026-03-26 06:53:17'),
+(13,3,2,'Portfolio','Create design projects','2026-03-26 06:53:35','2026-03-26 06:53:35'),
+(14,4,1,'SEO Basics','Learn SEO and content','2026-03-26 06:54:01','2026-03-26 06:54:01'),
+(15,4,2,'Ads','Run Google/Facebook ads','2026-03-26 06:54:16','2026-03-26 06:54:16'),
+(16,5,1,'HR Basics','Learn recruitment process','2026-03-26 06:55:05','2026-03-26 06:55:05'),
+(17,5,2,'Management','Handle employee relations','2026-03-26 06:55:19','2026-03-26 06:55:19'),
+(18,6,1,'Law Degree','Complete LLB','2026-03-26 06:59:36','2026-03-26 06:59:36'),
+(19,6,2,'Practice','Work under senior lawyer','2026-03-26 06:59:55','2026-03-26 06:59:55'),
+(20,7,1,'MBBS','Complete medical degree','2026-03-26 07:00:29','2026-03-26 07:00:29'),
+(21,7,2,'Specialization','Choose medical field','2026-03-26 07:00:45','2026-03-26 07:00:45');
 
 /*Table structure for table `sessions` */
 
@@ -274,7 +332,8 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last_activity`) values 
-('frbWCnCUX98RKNWlFC4Sh3OTmLyjBLqb69Ay4s9b',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZHJ6Q3ROUENmZnZyNk82RElpMU5LWVl1WUR5a2hkcm0yZnFQS0k3cSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXRlc3QiO3M6NToicm91dGUiO3M6MTQ6ImNtcy5jYXJlZXJUZXN0Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9',1774420923);
+('ppuoY7PbPHOI48re1ezrNbTAZyzlphLgte4zQKLR',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMmI5dE1ZMWZRb3Bpd0lBQzVDdDRrdkZ4R2VKU0Q5cDdoTVlPRzE0aCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvZGFzaGJvYXJkIjtzOjU6InJvdXRlIjtzOjEzOiJjbXMuZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9',1774510797),
+('td79FcKF70HLWrmmXoCp3ah6wOc2MipCSTg9AiiR',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZll1cHNPbXo0SWdVRlc1ZXdudEhmemo0SUk5ems4YkdhSDRwbXpVaCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXJlc3VsdCI7czo1OiJyb3V0ZSI7czoxNjoiY21zLmNhcmVlclJlc3VsdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==',1774511201);
 
 /*Table structure for table `skills` */
 
@@ -286,7 +345,7 @@ CREATE TABLE `skills` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `skills` */
 
@@ -295,7 +354,12 @@ insert  into `skills`(`id`,`name`,`created_at`,`updated_at`) values
 (2,'Communication','2026-03-15 10:09:09','2026-03-15 10:09:09'),
 (3,'Mathematics','2026-03-15 10:09:22','2026-03-15 10:09:22'),
 (4,'Design','2026-03-15 10:09:34','2026-03-15 10:09:34'),
-(5,'Problem Solving','2026-03-15 10:09:45','2026-03-15 10:09:45');
+(5,'Problem Solving','2026-03-15 10:09:45','2026-03-15 10:09:45'),
+(6,'Creativity','2026-03-15 10:09:45','2026-03-15 10:09:45'),
+(7,'Management','2026-03-15 10:09:45','2026-03-15 10:09:45'),
+(8,'Analytical Thinking','2026-03-15 10:09:45','2026-03-15 10:09:45'),
+(9,'Legal Knowledge','2026-03-15 10:09:45','2026-03-15 10:09:45'),
+(10,'Biology Knowledge','2026-03-15 10:09:45','2026-03-15 10:09:45');
 
 /*Table structure for table `student_answers` */
 
@@ -316,12 +380,15 @@ CREATE TABLE `student_answers` (
   CONSTRAINT `student_answers_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_answers_ibfk_2` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_answers_ibfk_3` FOREIGN KEY (`option_id`) REFERENCES `options` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `student_answers` */
 
 insert  into `student_answers`(`id`,`student_id`,`question_id`,`option_id`,`score`,`created_at`,`updated_at`) values 
-(2,2,4,1,0,'2026-03-25 06:41:51','2026-03-25 06:41:51');
+(1,2,5,5,5,'2026-03-26 07:46:22','2026-03-26 07:46:22'),
+(2,2,7,12,3,'2026-03-26 07:46:22','2026-03-26 07:46:22'),
+(3,2,8,15,3,'2026-03-26 07:46:22','2026-03-26 07:46:22'),
+(4,2,10,22,1,'2026-03-26 07:46:22','2026-03-26 07:46:22');
 
 /*Table structure for table `student_skill` */
 
@@ -336,13 +403,16 @@ CREATE TABLE `student_skill` (
   KEY `skill_id` (`skill_id`),
   CONSTRAINT `student_skill_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `student_skill` */
 
 insert  into `student_skill`(`id`,`student_id`,`skill_id`) values 
 (1,2,1),
-(2,2,2);
+(2,2,2),
+(3,2,4),
+(4,2,6),
+(5,2,8);
 
 /*Table structure for table `students` */
 
@@ -363,7 +433,7 @@ CREATE TABLE `students` (
 /*Data for the table `students` */
 
 insert  into `students`(`id`,`user_id`,`education`,`interests`,`created_at`,`updated_at`) values 
-(2,2,'Bsc IT','i am doing coding','2026-03-24 06:58:49','2026-03-24 07:27:34');
+(2,2,'Bsc IT','i am college student','2026-03-24 06:58:49','2026-03-26 07:46:04');
 
 /*Table structure for table `users` */
 
