@@ -176,6 +176,13 @@
                             <p class="text">Career Test</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('cms.careerResult') }}"
+                            class="nav-link @if (Route::currentRouteName() == 'cms.careerResult') active @endif">
+                            <i class="nav-icon fas fa-book-open"></i>
+                            <p class="text">Result</p>
+                        </a>
+                    </li>
                 @endif
             </ul>
         </nav>

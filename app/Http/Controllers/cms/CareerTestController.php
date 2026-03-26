@@ -6,15 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Models\Career;
 use App\Models\Option;
 use App\Models\Question;
+use App\Models\Skill;
 use App\Models\StudentAnswer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CareerTestController extends Controller
 {
     public function index()
     {
-        $questions = Question::with('options')->get();
+
+        $skillIds   = DB::table('student_skill')->where('student_id', Auth::user()->student->id)->pluck('skill_id');
+        $questions  = Question::with('options')->whereIn('skill_id', $skillIds)->get();
 
         return view('cms.student.test',compact('questions'));
     }
@@ -56,9 +60,20 @@ class CareerTestController extends Controller
             $skillScores[$skill_id]     +=  $ans->score;
         }
 
-        $topSkillId     =   array_keys($skillScores, max($skillScores))[0];
-        $career         =   Career::where('skill_id', $topSkillId)->first();
+        if (empty($skillScores)) {
+            return view('cms.student.result', [
+                'careers' => collect(), 
+                'skillScores' => [],
+                'skills' => []
+            ])->with('error', 'Please complete the test first.');
+        }
 
-        return view('cms.student.result', compact('career','skillScores'));
+        $skills         =   Skill::whereIn('id', array_keys($skillScores))->pluck('name', 'id');
+        $topSkillId     =   array_keys($skillScores, max($skillScores))[0];
+        $careers        =   Career::whereHas('skills', function ($q) use ($topSkillId) {
+                                    $q->where('skills.id', $topSkillId);
+                                })->get();
+
+        return view('cms.student.result', compact('careers','skillScores','skills'));
     }
 }
