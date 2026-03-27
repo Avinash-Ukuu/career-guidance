@@ -332,8 +332,8 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last_activity`) values 
-('ppuoY7PbPHOI48re1ezrNbTAZyzlphLgte4zQKLR',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMmI5dE1ZMWZRb3Bpd0lBQzVDdDRrdkZ4R2VKU0Q5cDdoTVlPRzE0aCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvZGFzaGJvYXJkIjtzOjU6InJvdXRlIjtzOjEzOiJjbXMuZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9',1774510797),
-('td79FcKF70HLWrmmXoCp3ah6wOc2MipCSTg9AiiR',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiZll1cHNPbXo0SWdVRlc1ZXdudEhmemo0SUk5ems4YkdhSDRwbXpVaCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXJlc3VsdCI7czo1OiJyb3V0ZSI7czoxNjoiY21zLmNhcmVlclJlc3VsdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==',1774511201);
+('fJat1q21VSXfLcZIBAg7l1k2zAonjHmgVHQkmbxH',5,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMkI2a0ZENGNhV0tuYTRWZlRTOE5sYmdSNmVpY0pCZ2R1WGw0ejlMMCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvc3R1ZGVudCI7czo1OiJyb3V0ZSI7czoxNToiY21zLmluZm9ybWF0aW9uIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NTt9',1774598942),
+('hbcFgGjXvp0j2a11FZoFBkakMh8NNOC9MVqNkyWN',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNUQ1a29aMEhCUDJPS0JHN2JRMTNsOTZHYlZaRjhKd1dyN0lUeUpkVyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvb3B0aW9uIjtzOjU6InJvdXRlIjtzOjE2OiJjbXMub3B0aW9uLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9',1774598001);
 
 /*Table structure for table `skills` */
 
@@ -401,9 +401,9 @@ CREATE TABLE `student_skill` (
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   KEY `skill_id` (`skill_id`),
-  CONSTRAINT `student_skill_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `student_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  CONSTRAINT `student_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `student_skill_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `student_skill` */
 
@@ -412,7 +412,8 @@ insert  into `student_skill`(`id`,`student_id`,`skill_id`) values
 (2,2,2),
 (3,2,4),
 (4,2,6),
-(5,2,8);
+(5,2,8),
+(8,3,1);
 
 /*Table structure for table `students` */
 
@@ -428,12 +429,13 @@ CREATE TABLE `students` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `students_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `students` */
 
 insert  into `students`(`id`,`user_id`,`education`,`interests`,`created_at`,`updated_at`) values 
-(2,2,'Bsc IT','i am college student','2026-03-24 06:58:49','2026-03-26 07:46:04');
+(2,2,'Bsc IT','i am college student','2026-03-24 06:58:49','2026-03-26 07:46:04'),
+(3,5,'BCA','Hacking, coding,gaming','2026-03-27 07:53:56','2026-03-27 07:54:49');
 
 /*Table structure for table `users` */
 
@@ -452,13 +454,14 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`image`,`role`,`remember_token`,`created_at`,`updated_at`) values 
 (1,'admin','admin@gmail.com',NULL,'$2y$12$pKgacXHRkIA58c5TvJnGp.S7bj0wwPKT26fingQ4NM1pgXlQOaLN6',NULL,'admin',NULL,'2026-03-14 05:03:59','2026-03-14 05:03:59'),
-(2,'test','test@gmail.com',NULL,'$2y$12$z./jgaBByKYYwnB0SaFMbuj1NO5i0qjWdzJ01Mxl0/rpZt2oKrtZe',NULL,'student','j6qtU7NJOIb7gaxzR7zQW9es8yAC83EDJTQQnsrVSzu6jmJxJ2gpRITEmvgP','2026-03-14 05:04:44','2026-03-14 05:04:44');
+(2,'test','test@gmail.com',NULL,'$2y$12$z./jgaBByKYYwnB0SaFMbuj1NO5i0qjWdzJ01Mxl0/rpZt2oKrtZe',NULL,'student','CJrVAXtXBr4tzoZeWsq5r4wpi6dIy2f5mwgi7yGwFKIx8aHfW6UGfRxqECAj','2026-03-14 05:04:44','2026-03-14 05:04:44'),
+(5,'suahil','suhail@gmail.com',NULL,'$2y$12$3hZNnAJvIiMjiJBtTDhtiuSnhVEUGZ5jWkg7FD/ppM6QqAyiOx6lu',NULL,NULL,NULL,'2026-03-27 07:53:55','2026-03-27 07:53:55');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
