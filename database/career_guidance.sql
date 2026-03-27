@@ -332,8 +332,9 @@ CREATE TABLE `sessions` (
 /*Data for the table `sessions` */
 
 insert  into `sessions`(`id`,`user_id`,`ip_address`,`user_agent`,`payload`,`last_activity`) values 
-('fJat1q21VSXfLcZIBAg7l1k2zAonjHmgVHQkmbxH',5,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMkI2a0ZENGNhV0tuYTRWZlRTOE5sYmdSNmVpY0pCZ2R1WGw0ejlMMCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvc3R1ZGVudCI7czo1OiJyb3V0ZSI7czoxNToiY21zLmluZm9ybWF0aW9uIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NTt9',1774598942),
-('hbcFgGjXvp0j2a11FZoFBkakMh8NNOC9MVqNkyWN',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNUQ1a29aMEhCUDJPS0JHN2JRMTNsOTZHYlZaRjhKd1dyN0lUeUpkVyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvb3B0aW9uIjtzOjU6InJvdXRlIjtzOjE2OiJjbXMub3B0aW9uLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9',1774598001);
+('5Law4J7TElkwy7QG2e818Z3lK9uXw1YvsvbERlTE',2,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUktDRHNibVZNTHoxaXU1bjN2dzhlVmQ1MU9uT3gyOThTUDJPbDdJZyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvY2FyZWVyLXJlc3VsdCI7czo1OiJyb3V0ZSI7czoxNjoiY21zLmNhcmVlclJlc3VsdCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==',1774600405),
+('hbcFgGjXvp0j2a11FZoFBkakMh8NNOC9MVqNkyWN',1,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNUQ1a29aMEhCUDJPS0JHN2JRMTNsOTZHYlZaRjhKd1dyN0lUeUpkVyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvZGFzaGJvYXJkIjtzOjU6InJvdXRlIjtzOjEzOiJjbXMuZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9',1774600420),
+('vgm3nHGfUnCNyCUchtzZ2mQGvrSFNpkx9rIsGf7y',6,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoiYWEzQmJxaTNiR3JxR2VwelZ3MmhNMlJPWXJJMmRlVlhWTGxPWm9DcCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbXMvZGFzaGJvYXJkIjtzOjU6InJvdXRlIjtzOjEzOiJjbXMuZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Njt9',1774600599);
 
 /*Table structure for table `skills` */
 
@@ -367,28 +368,30 @@ DROP TABLE IF EXISTS `student_answers`;
 
 CREATE TABLE `student_answers` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `student_id` bigint(20) unsigned NOT NULL,
-  `question_id` bigint(20) unsigned NOT NULL,
-  `option_id` bigint(20) unsigned NOT NULL,
-  `score` int(11) DEFAULT NULL,
+  `student_id` bigint(20) unsigned DEFAULT NULL,
+  `question_id` bigint(20) unsigned DEFAULT NULL,
+  `option_id` bigint(20) unsigned DEFAULT NULL,
+  `score` int(11) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   KEY `question_id` (`question_id`),
   KEY `option_id` (`option_id`),
-  CONSTRAINT `student_answers_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `student_answers_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_answers_ibfk_2` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_answers_ibfk_3` FOREIGN KEY (`option_id`) REFERENCES `options` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `student_answers` */
 
 insert  into `student_answers`(`id`,`student_id`,`question_id`,`option_id`,`score`,`created_at`,`updated_at`) values 
-(1,2,5,5,5,'2026-03-26 07:46:22','2026-03-26 07:46:22'),
-(2,2,7,12,3,'2026-03-26 07:46:22','2026-03-26 07:46:22'),
-(3,2,8,15,3,'2026-03-26 07:46:22','2026-03-26 07:46:22'),
-(4,2,10,22,1,'2026-03-26 07:46:22','2026-03-26 07:46:22');
+(1,3,5,5,5,'2026-03-27 08:23:26','2026-03-27 08:23:26'),
+(2,3,6,8,5,'2026-03-27 08:23:26','2026-03-27 08:23:26'),
+(7,2,5,5,5,'2026-03-27 08:33:25','2026-03-27 08:33:25'),
+(8,2,7,13,1,'2026-03-27 08:33:25','2026-03-27 08:33:25'),
+(9,2,8,15,3,'2026-03-27 08:33:25','2026-03-27 08:33:25'),
+(10,2,10,22,1,'2026-03-27 08:33:25','2026-03-27 08:33:25');
 
 /*Table structure for table `student_skill` */
 
@@ -403,7 +406,7 @@ CREATE TABLE `student_skill` (
   KEY `skill_id` (`skill_id`),
   CONSTRAINT `student_skill_ibfk_2` FOREIGN KEY (`skill_id`) REFERENCES `skills` (`id`) ON DELETE CASCADE,
   CONSTRAINT `student_skill_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `student_skill` */
 
@@ -413,7 +416,9 @@ insert  into `student_skill`(`id`,`student_id`,`skill_id`) values
 (3,2,4),
 (4,2,6),
 (5,2,8),
-(8,3,1);
+(8,3,1),
+(9,3,4),
+(10,3,5);
 
 /*Table structure for table `students` */
 
@@ -429,13 +434,14 @@ CREATE TABLE `students` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `students_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `students` */
 
 insert  into `students`(`id`,`user_id`,`education`,`interests`,`created_at`,`updated_at`) values 
 (2,2,'Bsc IT','i am college student','2026-03-24 06:58:49','2026-03-26 07:46:04'),
-(3,5,'BCA','Hacking, coding,gaming','2026-03-27 07:53:56','2026-03-27 07:54:49');
+(3,5,'BCA','Hacking, coding,gaming','2026-03-27 07:53:56','2026-03-27 07:54:49'),
+(4,6,NULL,NULL,'2026-03-27 08:36:38','2026-03-27 08:36:38');
 
 /*Table structure for table `users` */
 
@@ -454,14 +460,15 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
 insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`image`,`role`,`remember_token`,`created_at`,`updated_at`) values 
 (1,'admin','admin@gmail.com',NULL,'$2y$12$pKgacXHRkIA58c5TvJnGp.S7bj0wwPKT26fingQ4NM1pgXlQOaLN6',NULL,'admin',NULL,'2026-03-14 05:03:59','2026-03-14 05:03:59'),
 (2,'test','test@gmail.com',NULL,'$2y$12$z./jgaBByKYYwnB0SaFMbuj1NO5i0qjWdzJ01Mxl0/rpZt2oKrtZe',NULL,'student','CJrVAXtXBr4tzoZeWsq5r4wpi6dIy2f5mwgi7yGwFKIx8aHfW6UGfRxqECAj','2026-03-14 05:04:44','2026-03-14 05:04:44'),
-(5,'suahil','suhail@gmail.com',NULL,'$2y$12$3hZNnAJvIiMjiJBtTDhtiuSnhVEUGZ5jWkg7FD/ppM6QqAyiOx6lu',NULL,NULL,NULL,'2026-03-27 07:53:55','2026-03-27 07:53:55');
+(5,'suahil','suhail@gmail.com',NULL,'$2y$12$3hZNnAJvIiMjiJBtTDhtiuSnhVEUGZ5jWkg7FD/ppM6QqAyiOx6lu',NULL,'student',NULL,'2026-03-27 07:53:55','2026-03-27 07:53:55'),
+(6,'hardip singh','hardip@gmail.com',NULL,'$2y$12$ZfAmdPgKlXeV7QnlcB3R2e.LpoMa87d04AEquFRFJz..ycsvgLhQK',NULL,'student',NULL,'2026-03-27 08:36:38','2026-03-27 08:36:38');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
