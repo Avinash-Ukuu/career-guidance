@@ -62,7 +62,7 @@ class CareerTestController extends Controller
 
         if (empty($skillScores)) {
             return view('cms.student.result', [
-                'careers' => collect(), 
+                'careers' => collect(),
                 'skillScores' => [],
                 'skills' => []
             ])->with('error', 'Please complete the test first.');
@@ -70,7 +70,7 @@ class CareerTestController extends Controller
 
         $skills         =   Skill::whereIn('id', array_keys($skillScores))->pluck('name', 'id');
         $topSkillId     =   array_keys($skillScores, max($skillScores))[0];
-        $careers        =   Career::whereHas('skills', function ($q) use ($topSkillId) {
+        $careers        =   Career::with('roadmaps')->whereHas('skills', function ($q) use ($topSkillId) {
                                     $q->where('skills.id', $topSkillId);
                                 })->get();
 

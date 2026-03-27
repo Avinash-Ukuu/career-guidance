@@ -26,7 +26,7 @@
                         <div class="card card-primary mb-3">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Q{{ $index + 1 }}. {{ $question->question }}
+                                    Q. {{ $question->question }}
                                 </h3>
                             </div>
 

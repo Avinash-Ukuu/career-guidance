@@ -28,6 +28,28 @@
                             <h4>{{ $career->name }}</h4>
                             <p>{{ $career->description }}</p>
                         </div>
+                        <div class="card-body">
+                            <h4>Roadmap</h4>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Step</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach ($career->roadmaps as $roadmap)
+                                        <tr>
+                                            <td>{{ $roadmap->step }}</td>
+                                            <td>{{ $roadmap->title }}</td>
+                                            <td>{{ $roadmap->description }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 @endforeach
             @else
@@ -66,4 +88,5 @@
         </div>
 
     </div>
+    <div class="row"></div>
 @endsection
